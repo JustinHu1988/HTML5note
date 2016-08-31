@@ -13,7 +13,7 @@
 		var dX = deltaX + (e.deltaX);
 		var dY = deltaY + (e.deltaY);
 		console.log(e.deltaY);
-		let pageHeight = $pages.height();
+		var pageHeight = $pages.height();
 		$('section').each(function(){
 				if ($(this).hasClass("now")) {
 					$(this).css('transform','translateY('+ e.deltaY + 'px)');
@@ -27,7 +27,7 @@
 	mc.on("panend", function(e){
 		$('section').each(function(){
 			if ($(this).hasClass("now")) {
-				let pageHeight = $pages.height();
+				var pageHeight = $pages.height();
 				if(e.deltaY<=30 && e.deltaY>=-30){
 					var translateNow = parseInt($pages.css('transform'));
 					$(this).css('transform','translateY('+ 0 + 'vh)');
@@ -35,7 +35,7 @@
 					$(this).prev().css('transform','translateY('+ -100 + 'vh)');
 				} else if (e.deltaY<-30) {
 					var _this = $(this);
-					let j = -e.deltaY;
+					var j = -e.deltaY;
 					if($(this).index()<secLen-1){
 					var movevh = function(){
 						_this.css('transform','translateY(' +  -j +"px");
@@ -60,7 +60,7 @@
 					}
 				} else if (e.deltaY>30) {
 					var _this = $(this);
-					let k = e.deltaY;
+					var k = e.deltaY;
 					console.log(k);
 					if($(this).index()>0){
 						var movevh1 = function(){
