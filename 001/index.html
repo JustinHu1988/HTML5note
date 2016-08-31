@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>夏日青春漾</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+<script type="text/javascript">
+!function(win, option) {
+  var count = 0,
+      designWidth = option.designWidth,
+      designHeight = option.designHeight || 0,
+      designFontSize = option.designFontSize || 133.4,
+      callback = option.callback || null,
+      root = document.documentElement,
+      body = document.body,
+      rootWidth, newSize, t, self;
+  //返回root元素字体计算结果
+  function _getNewFontSize() {
+    var scale = designHeight !== 0 ? Math.min(win.innerWidth / designWidth, win.innerHeight / designHeight) : win.innerWidth / designWidth;
+    return parseInt( scale * 10000 * designFontSize ) / 10000;
+  }
+  !function () {
+    rootWidth = root.getBoundingClientRect().width;
+    self = self ? self : arguments.callee;
+    //如果此时屏幕宽度不准确，就尝试再次获取分辨率，只尝试20次，否则使用win.innerWidth计算
+    if( rootWidth !== win.innerWidth &&  count < 20 ) {
+      win.setTimeout(function () {
+        count++;
+        self();
+      }, 0);
+    } else {
+      newSize = _getNewFontSize();
+      //如果css已经兼容当前分辨率就不管了
+      if( newSize + 'px' !== getComputedStyle(root)['font-size'] ) {
+        root.style.fontSize = newSize + "px";
+        return callback && callback(newSize);
+      };
+    };
+  }();
+  //横竖屏切换的时候改变fontSize，根据需要选择使用
+  win.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+    clearTimeout(t);
+    t = setTimeout(function () {
+      self();
+    }, 200);
+  }, false);
+}(window, {
+  designWidth: 750,
+  designHeight: 1334,
+  designFontSize: 133.4,
+  callback: function (argument) {
+    console.timeEnd("test")
+  }
+});
+</script>
+
+<link rel="stylesheet" type="text/css" href="summerseisyun.css">
+<style>
+  .time-box {
+    background: url(http://pic2.qiyipic.com/summer201608/20160804/time-box-53.4-32.8.png);
+    background-size: 100% 100%;
+  }
+  .time-box .line-2 {
+    height: 1.8rem;
+    width: 4.44rem;
+    color: #8b2907;
+    font-size: 0.2rem;
+    line-height: 0.35rem;
+    vertical-align: middle;
+    display: table-cell;
+}
+  .playbox .videopic{
+	background:url();
+  }
+  .section-05 .reju-box .banner{
+    background-color:;
+  }
+  .gift-box {
+    overflow: hidden;
+    height: 1.4rem;
+    position: absolute;
+    top: 0.4rem;
+    width: 2.71rem;
+}
+#gift-ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#gift-ul li{
+  	height:0.7rem;
+  	color:#fff;
+  }
+#gift-ul li p{
+	font-size:0.2rem;
+	line-height:0.35rem;
+	height:0.35rem;
+	color:#fff;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	width: 2.54rem;
+	margin-left:0.1rem;
+	margin-right:0.1rem;
+    }
+    #gift-ul li p:last-child{
+    	color:#fff228;
+    }
+    #slide-box02{
+    	background-color: #d5e9a6;
+    }
+  #slide-box01{
+    	background-color: #d5e9a6;
+    }
+
+#slide-box01 ul li,#slide-box02 ul li{
+    height: 4.767rem;
+    width: 3.88rem;
+    float: left;
+    overflow: hidden;
+    margin: 0 0.03rem 0 0.01rem;
+}
+.logo-green{
+	width:2.3024rem;
+	    height: 0.9352rem;
+	    background: url(http://pic4.qiyipic.com/summer201608/20160805/logo-green-2.878-1.169.png);
+    background-size: 100% 100%;
+    left: 0.1rem;
+    top: 0.2rem;
+    opacity: 0;
+}
+
+.now .logo-green{
+	animation: moveright 0.5s 1 2.8s;
+    animation-fill-mode: forwards;
+    -webkit-animation: moveright 0.5s 1 2.8s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.logo-white{
+	width:2.3024rem;
+	    height: 0.9352rem;
+	    background: url(http://pic3.qiyipic.com/summer201608/20160805/798c281327c5457c9b94b2d36715f352.png);
+    background-size: 100% 100%;
+    right: 0.1rem;
+    top: 0.4rem;
+    opacity: 0;
+}
+.section-02 .logo-white{
+	top: 0.2rem;
+}
+
+.now .logo-white{
+    animation: scaleupdown 0.8s 1 1.5s;
+    animation-fill-mode: forwards;
+    -webkit-animation: scaleupdown 0.8s 1 1.5s;
+    -webkit-animation-fill-mode: forwards;
+}
+.iqiyi-logo{
+	right: 1.8rem;
+}
+
+  
+  </style>
+</head>
+<body>
+	<div id="pages">
+		<!--第1页-->
+		<section class="section section-01 now" id="section-01">
+			<div class="main-content">
+				<div class="logo-green"></div>
+				<div class="bgitem02"></div>
+				<div class="bgitem03"></div>
+				<div class="bgitem04"></div>
+				<div class="bgitem05"></div>
+				<div class="bgitem06"></div>
+				<div class="bgitem07"></div>
+				<div class="bgitem08" id="readme"></div>
+				<div class="arrow09">
+					<img src="http://pic2.qiyipic.com/summer201608/20160809/chakanarrow.png">
+				</div>
+
+				<div class="title-slogan" id="title-slogan"><img src="http://pic1.qiyipic.com/summerqingchun/20160804/title-slogan.png"></div>
+				<!--签到礼-->
+				<div class="sign">
+					<a href="http://www.iqiyi.com/signgiftH5.html">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/sign-16.5-7.6.png">
+					</a>
+				</div>
+				<!--冠军礼-->
+				<div class="champion">
+					<a href="http://www.iqiyi.com/championgiftH5.html">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/champion-16.5-7.6.png">
+					</a>
+				</div>
+				<div class="flash-left"></div>
+				<div class="flash-right"></div>
+				<!--获奖名单-->
+				<div class="ranking">
+					<div class="gift-box">
+                      <ul id="gift-ul"></ul>
+					</div>
+				</div>
+				<div class="arrow-bottom">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/arrow-bottom-5.5-5.5.png">
+				</div>
+			</div>
+          <div id="readmebox">
+				<div id="closereadme"></div>
+			</div>
+		</section>
+		<!--第2页-->
+		<section class="section section-02 next">
+			<div class="main-content">
+				<div class="logo-white"></div>
+				<div class="playbox">
+				<!--直播播放窗-->
+					<div class="playvideo" data-aidtest="663158123" data-tvidtest="663158123" data-murl="http://www.iqiyi.com/l_19rrb31q87.html">
+							<div class="videopic">
+								<img src="http://pic3.qiyipic.com/common/20160803/限免转免展示设计 移动端.jpg">
+							</div>
+							<!--<div class="playlogo"></div>-->
+					</div>
+					<div class="rotatelogo"></div>
+				</div>
+				<!--时间表-->
+				<div class="time-box">
+					<div class="date">8月14日</div>
+                  <div class="line-1">20:00-23:00</div>
+					<div class="line-2">
+                    韩剧《灰姑娘与四骑士》第1集<br />
+                      电影《点球成金》
+                   
+
+                  	</div>
+				</div>
+				<div class="logo"></div>
+				<div class="arrow-bottom">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/arrow-bottom-5.5-5.5.png">
+				</div>
+			</div>
+		</section>
+		<!--第3页-->
+		<section class="section section-03 reju1 next">
+			<div class="main-content">
+				<div class="logo-white"></div>
+				<div class="bgitem14"></div>
+				<div class="bgitem15"></div>
+				<div class="bgitem16"></div>
+				<div class="logo"></div>
+				<div class="reju-box">
+					<div class="arrow-left"></div>
+					<div class="arrow-right"></div>
+					<div id="slide-box01" class="slide-box">
+					<!--VIP嘉年华-->
+						<ul>
+							<li>
+								<a href="http://www.iqiyi.com/club/">
+									<img src="http://pic2.qiyipic.com/common/20160815/kuanghaijulebu.jpg">
+								</a>
+							</li>
+							<li>
+								<a href="http://vip.iqiyi.com/chouzhoubian-h5.html">
+									<img src="http://pic9.qiyipic.com/common/20160815/zhoubianfang.jpg">
+								</a>
+							</li>
+							<li>
+								<a href="http://vip.iqiyi.com/hygyt-h5.html">
+									<img src="http://pic7.qiyipic.com/common/20160815/guanyingtuan.jpg">
+								</a>
+							</li>
+						</ul>
+					</div>
+					<ul class="slide-nav">
+						<li class="activeClass"></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="arrow-bottom2">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/arrow-bottom2-5.5-5.5.png">
+				</div>
+			</div>
+		</section>
+		<!--第4页-->
+		<section class="section section-04 reju1 next">
+			<div class="main-content">
+				<div class="logo-white"></div>
+				<div class="bgitem14"></div>
+				<div class="bgitem15"></div>
+				<div class="bgitem16"></div>
+				<div class="logo"></div>
+				<div class="reju-box">
+					<div class="arrow-left"></div>
+					<div class="arrow-right"></div>
+					<div id="slide-box02" class="slide-box">
+					<!--泡圈泡剧泡爱豆-->
+						<ul>
+							<li>
+								<a href="http://m.iqiyi.com/m5/bubble/circleInfo.html?wallId=200022047&platform=15" data-rseat="rseatxhpp24">
+									<img src="http://pic4.qiyipic.com/common/20160816/8.16-mobile-jianailiang.jpg">
+								</a>
+							</li>
+							<li>
+								<a href="http://m.iqiyi.com/m5/bubble/circleInfo.html?wallId=200011247&platform=15" data-rseat="rseatxhpp25">
+									<img src="http://pic6.qiyipic.com/common/20160816/8.16-mobile-songqian.jpg" >
+								</a>
+							</li>
+							<li>
+								<a href="http://m.iqiyi.com/m5/bubble/circleInfo.html?wallId=55&platform=15" data-rseat="rseatxhpp26">
+									<img src="http://pic4.qiyipic.com/common/20160816/8.16-mobile-aidoutongk.jpg">
+								</a>
+							</li>
+						</ul>
+					</div>
+					<ul class="slide-nav">
+						<li class="activeClass"></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="arrow-bottom2">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/arrow-bottom2-5.5-5.5.png">
+				</div>
+			</div>
+		</section>
+		<!--第5页-->
+		<section class="section section-05 next">
+			<div class="main-content">
+				<div class="logo-white"></div>
+				<div class="bgitem14"></div>
+				<div class="bgitem15"></div>
+				<div class="bgitem16"></div>
+				<div class="logo"></div>
+				<div class="reju-box">
+				<!--方图-->
+					<div class="banner">
+						<a href="#">
+							<img src="http://pic0.qiyipic.com/common/20160803/夏日青春漾粉丝嘉年华H5专题页banner--确认版.jpg">
+						</a>
+					</div>
+				<!--横图-->
+					<div class="dianshang">
+						<a href="http://mall.iqiyi.com/kszt/summerYoung20160801.html?odfrm=YOUNGH5">
+							<img src="http://pic9.qiyipic.com/common/20160810/H5-banner-623-252-8-3.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="arrow-bottom2">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/arrow-bottom2-5.5-5.5.png">
+				</div>
+			</div>
+		</section>
+		<!--第6页-->
+		<section class="section section-06 reju2 next">
+			<div class="main-content">
+				<div class="logo-white"></div>
+				<div class="bgitem14"></div>
+				<div class="bgitem15"></div>
+				<div class="bgitem16"></div>
+				<div class="logo"></div>
+				<div class="reju-box">
+					<div class="arrow-right"></div>
+					<div class="arrow-left"></div>
+					<div id="slide-box03" class="slide-box">
+						<ul>
+						<!--暑假剧王-->
+							<li>
+								<div class="subtitle">
+									<img src="http://pic6.qiyipic.com/xiariqingchun2016/20160802/title1.png">
+								</div>
+								<div class="subcontent">
+									<div class="sakuhin videoArea" data-aidtest="203164301" data-tvidtest="504028400" data-murl="http://www.iqiyi.com/v_19rrmbr34s.html">
+											<img src="http://pic3.qiyipic.com/common/20160802/老九门.jpg">
+											<p>老九门</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="203288701" data-tvidtest="513005800" data-murl="http://www.iqiyi.com/v_19rrmfrsec.html">
+											<img src="http://pic6.qiyipic.com/common/20160802/幻城.jpg">
+											<p>幻城</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="202548801" data-tvidtest="511817500" data-murl="http://www.iqiyi.com/v_19rrmgbjow.html">
+											<img src="http://pic2.qiyipic.com/common/20160802/秀丽江山之长歌行.jpg">
+											<p>秀丽江山之长歌行</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="204263601" data-tvidtest="515192500" data-murl="http://m.iqiyi.com/v_19rrmffbao.html">
+											<img src="http://pic1.qiyipic.com/common/20160802/校花的贴身高手2.jpg">
+											<p>校花的贴身高手2</p>
+									</div>
+								</div>
+							</li>
+						<!--综艺大咖-->
+							<li>
+								<div class="subtitle">
+									<img src="http://pic6.qiyipic.com/xiariqingchun2016/20160802/title2.png">
+								</div>
+								<div class="subcontent">
+									<div class="sakuhin videoArea" data-aidtest="203850401" data-tvidtest="515533500" data-murl="http://www.iqiyi.com/v_19rrmeui8g.html">
+											<img src="http://pic8.qiyipic.com/common/20160802/十三亿分贝.jpg">
+											<p>十三亿分贝</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="203902301" data-tvidtest="515356400" data-murl="http://www.iqiyi.com/v_19rrmeok2k.html">
+											<img src="http://pic1.qiyipic.com/common/20160802/我去上学啦.jpg">
+											<p>我去上学啦第2季</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="204253701" data-tvidtest="514877300" data-murl="http://www.iqiyi.com/v_19rrmegdug.html">
+											<img src="http://pic5.qiyipic.com/common/20160802/偶滴歌神啊.jpg">
+											<p>偶滴歌神啊第3季</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="201187001" data-tvidtest="521737200" data-murl="http://www.iqiyi.com/v_19rrm10exo.html">
+											<img src="http://pic8.qiyipic.com/common/20160813/170x225.jpg">
+											<p>扒神嗨评</p>
+									</div>
+								</div>
+							</li>
+						<!--欢乐动漫-->
+							<li>
+								<div class="subtitle">
+									<img src="http://pic6.qiyipic.com/xiariqingchun2016/20160802/title3.png">
+								</div>
+								<div class="subcontent">
+									<div class="sakuhin videoArea" data-aidtest="202861101" data-tvidtest="385274600" data-murl="http://www.iqiyi.com/v_19rrok4nt0.html">
+											<img src="http://pic1.qiyipic.com/common/20160802/航海王235.jpg">
+											<p>航海王</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="203472101" data-tvidtest="438724200" data-murl="http://www.iqiyi.com/v_19rrl6d4as.html">
+											<img src="http://pic6.qiyipic.com/common/20160815/235-309fenhongzhu.jpg">
+											<p>粉红猪小妹全集</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="203664401" data-tvidtest="453595200" data-murl="http://www.iqiyi.com/v_19rrkxo6cs.html">
+											<img src="http://pic0.qiyipic.com/common/20160815/235-309zuiqiangzhanshi.jpg">
+											<p>最强战士之迷你特工队</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="204232901" data-tvidtest="506871100" data-murl="http://www.iqiyi.com/v_19rrm9pids.html">
+											<img src="http://pic1.qiyipic.com/common/20160802/新葫芦兄弟235.jpg">
+											<p>新葫芦兄弟</p>
+									</div>
+								</div>
+							</li>
+						<!--独播电影-->
+							<li>
+								<div class="subtitle">
+									<img src="http://pic6.qiyipic.com/xiariqingchun2016/20160802/title4.png">
+								</div>
+								<div class="subcontent">
+									<div class="sakuhin videoArea" data-aidtest="479299300" data-tvidtest="479299300" data-murl="http://www.iqiyi.com/v_19rrlvpz7s.html">
+											<img src="http://pic6.qiyipic.com/common/20160802/235309冰河追凶.jpg">
+											<p>冰河追凶</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="510666400" data-tvidtest="510666400" data-murl="http://www.iqiyi.com/v_19rrm6z1sc.html">
+											<img src="http://pic8.qiyipic.com/common/20160802/235309路边野餐.jpg">
+											<p>路边野餐</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="469305100" data-tvidtest="469305100" data-murl="http://www.iqiyi.com/v_19rrkyavkw.html">
+											<img src="http://pic9.qiyipic.com/common/20160802/235309海街日记.jpg">
+											<p>海街日记</p>
+									</div>
+									<div class="sakuhin videoArea" data-aidtest="432658900" data-tvidtest="432658900" data-murl="http://www.iqiyi.com/v_19rrkg7mpk.html">
+											<img src="http://pic6.qiyipic.com/common/20160802/235309边境杀手.jpg">
+											<p>边境杀手</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul class="slide-nav">
+						<li class="activeClass"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="arrow-bottom2">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/arrow-bottom2-5.5-5.5.png">
+				</div>
+			</div>
+		</section>
+		<!--第7页（不用修改）-->
+		<section class="section section-07 next">
+			<div class="bg"></div>
+			<div class="main-content">
+				<div class="bgitem11"></div>
+				<div class="bg-logo"></div>
+				<div class="slogan"></div>
+				<div class="arrow">
+					<img src="http://pic2.qiyipic.com/xiariqingchun2016/20160801/arrow-10.8-12.4.png">
+				</div>
+				<div class="iqiyi-logo"></div>
+			</div>
+
+		</section>
+	</div>
+
+<script type="text/javascript" src="http://pic2.qiyipic.com/js/xiariqingchun2016/hammer.min.js"></script>
+<script type="text/javascript" src="http://pic2.qiyipic.com/js/xiariqingchun2016/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="005.js"></script>
+
+
+
+
+
+
+</body>
+</html>
