@@ -22,7 +22,7 @@ var movevh = function(){
 			nowClass.css('transform','translateY(' +  moveYDestance +"px");
 			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
-			moveYDestance += Math.ceil((pageHeight+1-moveYDestance)/8);
+			moveYDestance += (pageHeight+1-moveYDestance)/8;
 			if(moveYDestance<pageHeight+1){
 							setTimeout(movevh, 1000/60);
 						};
