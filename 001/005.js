@@ -43,11 +43,11 @@
 						_this.prev().css('transform','translateY('+ -100 + 'vh)');
 						j += Math.ceil((pageHeight+1-j)/8);
 						if(j<pageHeight+1){
-							setTimeout(movevh, 1000/60);
+							requestAnimationFrame(movevh);
 							console.log(j);
 						};
 					};
-					setTimeout(movevh, 1000);
+					requestAnimationFrame(movevh);
 					setTimeout(function(){
 						_this.addClass("prev").removeClass("now");
 						_this.next().addClass("now").removeClass("next");
@@ -68,12 +68,12 @@
 						_this.prev().css('transform','translateY(' +  (k - pageHeight) +"px");
 						_this.next().css('transform','translateY('+ 100 + 'vh)');
 						k += Math.ceil((pageHeight+1-k)/8);
-						if(k<pageHeight+1){
-							setTimeout(movevh1, 1000/60);
-							console.log(k);
+							if(k<pageHeight+1){
+								requestAnimationFrame(movevh1);
+								console.log(k);
+							};
 						};
-						};
-						setTimeout(movevh1, 1000);
+						requestAnimationFrame(movevh1);
 						setTimeout(function(){
 							_this.addClass("next").removeClass("now");
 							_this.prev().addClass("now").removeClass("prev");
