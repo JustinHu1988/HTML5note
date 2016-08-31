@@ -47,7 +47,7 @@
 							console.log(j);
 						};
 					};
-					setTimeout(movevh, 1000/60);
+					setTimeout(movevh, 1000);
 					setTimeout(function(){
 						_this.addClass("prev").removeClass("now");
 						_this.next().addClass("now").removeClass("next");
@@ -73,7 +73,7 @@
 							console.log(k);
 						};
 						};
-						setTimeout(movevh1, 1000/60);
+						setTimeout(movevh1, 1000);
 						setTimeout(function(){
 							_this.addClass("next").removeClass("now");
 							_this.prev().addClass("now").removeClass("prev");
