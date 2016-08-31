@@ -32,7 +32,7 @@ pages.addEventListener("touchend",function(e){
 	console.log(e);
 	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
 	if(moveYDestance>-50){
-			setTimeout(movevh, 1000/60);
+		movevh();
 	}
 });
 
