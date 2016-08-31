@@ -18,11 +18,7 @@ pages.addEventListener("touchmove", function(e){
 	console.log($("now").css('transform'));
 });
 
-pages.addEventListener("touchend",function(e){
-	console.log(e);
-	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
-	if(moveYDestance>-50){
-		var movevh = function(){
+var movevh = function(){
 			nowClass.css('transform','translateY(' +  moveYDestance +"px");
 			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
@@ -31,6 +27,11 @@ pages.addEventListener("touchend",function(e){
 							setTimeout(movevh, 1000/60);
 						};
 					};
+
+pages.addEventListener("touchend",function(e){
+	console.log(e);
+	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
+	if(moveYDestance>-50){
 			setTimeout(movevh, 1000/60);
 	}
 });
