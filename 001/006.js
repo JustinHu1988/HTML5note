@@ -42,6 +42,7 @@ titleSlogan.addEventListener("touchstart", function(e){
 titleSlogan.addEventListener("touchmove", function(e){
 	//纵向跟手移动
 	e.preventDefault();
+	//阻止冒泡
 	e.stopPropagation();
 
 	
