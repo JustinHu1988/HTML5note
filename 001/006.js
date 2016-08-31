@@ -1,6 +1,8 @@
 var pages = document.getElementById("pages"),
 	touchStartPostion = {},
-	nowClass;
+	nowClass,
+	moveYDestance,
+	pageHeight = $(pages).height(); //直接使用原生.style.height获取不到height值
 
 pages.addEventListener("touchstart", function(e){
 	//获取初始touch坐标
@@ -18,41 +20,19 @@ pages.addEventListener("touchmove", function(e){
 
 pages.addEventListener("touchend",function(e){
 	console.log(e);
-	if(e.changedTouches[0].clientY<touchStartPostion.y-50){
-		$(".now").css('transform','translateY(0px)');
+	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
+	if(moveYDestance>-50){
+		var movevh = function(){
+			nowClass.css('transform','translateY(' +  moveYDestance +"px");
+			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
+			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
+			moveYDestance += Math.ceil((pageHeight+1-moveYDestance)/8);
+			if(moveYDestance<pageHeight+1){
+							setTimeout(movevh, 1000/60);
+						};
+					};
+			setTimeout(movevh, 1000/60);
 	}
 });
 
 
-//
-
-var titleSlogan = document.getElementById("title-slogan");
-var thisNowTop;
-
-titleSlogan.addEventListener("touchstart", function(e){
-	//获取初始touch坐标
-	e.stopPropagation();
-
-	touchStartPostion.x = e.changedTouches[0].clientX;
-	touchStartPostion.y = e.changedTouches[0].clientY;
-
-	thisNowTop = parseFloat($(this).css('top'));
-});
-
-titleSlogan.addEventListener("touchmove", function(e){
-	//纵向跟手移动
-	e.preventDefault();
-	//阻止冒泡
-	e.stopPropagation();
-
-	
-	$(this).css('top', (e.changedTouches[0].clientY-touchStartPostion.y + thisNowTop) +"px");
-	console.log(thisNowTop);
-});
-
-titleSlogan.addEventListener("touchend",function(e){
-	console.log(e);
-	if(e.changedTouches[0].clientY<touchStartPostion.y-50){
-		$(this).css('transform','translateY(0px)');
-	}
-});
