@@ -48,11 +48,6 @@
 						};
 					};
 					setTimeout(movevh, 1000/60);
-					setTimeout(movevh, 1000/60);
-					setTimeout(movevh, 1000/60);
-					setTimeout(movevh, 1000/60);
-					setTimeout(movevh, 1000/60);
-					setTimeout(movevh, 1000/60);
 					setTimeout(function(){
 						_this.addClass("prev").removeClass("now");
 						_this.next().addClass("now").removeClass("next");
