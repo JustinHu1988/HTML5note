@@ -38,8 +38,8 @@
 					var j = -e.deltaY;
 					if($(this).index()<secLen-1){
 					var movevh = function(){
-						_this.css('transform','translateY(' +  -j +"px");
-						_this.next().css('transform','translateY(' +  (-j + pageHeight) +"px");
+						_this.css('transform','translateY(' +  -j +"px)");
+						_this.next().css('transform','translateY(' +  (-j + pageHeight) +"px)");
 						_this.prev().css('transform','translateY('+ -100 + 'vh)');
 						j += Math.ceil((pageHeight+1-j)/8);
 						if(j<pageHeight+1){
@@ -64,8 +64,8 @@
 					console.log(k);
 					if($(this).index()>0){
 						var movevh1 = function(){
-						_this.css('transform','translateY(' +  k +"px");
-						_this.prev().css('transform','translateY(' +  (k - pageHeight) +"px");
+						_this.css('transform','translateY(' +  k +"px)");
+						_this.prev().css('transform','translateY(' +  (k - pageHeight) +"px)");
 						_this.next().css('transform','translateY('+ 100 + 'vh)');
 						k += Math.ceil((pageHeight+1-k)/8);
 						if(k<pageHeight+1){
