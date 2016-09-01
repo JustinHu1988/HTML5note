@@ -39,7 +39,7 @@ pages.addEventListener("touchend",function(e){
 	e.preventDefault();
 	e.stopPropagation();
 	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
-	if(moveYDestance>-50){
+	if(moveYDestance>50){
 		movevh();
 	}
 });
