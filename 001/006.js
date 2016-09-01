@@ -3,8 +3,13 @@ var pages = document.getElementById("pages"),
 	nowClass,
 	moveYDestance,
 	pageHeight = $(pages).height(); //直接使用原生.style.height获取不到height值
-
+document.addEventListener('touchstart', function(e) {
+  e.preventDefault();
+});
 document.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+});
+document.addEventListener('touchend', function(e) {
   e.preventDefault();
 });
 
@@ -35,7 +40,6 @@ var movevh = function(){
 };
 
 pages.addEventListener("touchend",function(e){
-	console.log(e);
 	e.preventDefault();
 	e.stopPropagation();
 	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
