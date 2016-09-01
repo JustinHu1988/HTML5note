@@ -30,9 +30,9 @@ pages.addEventListener("touchmove", function(e){
 });
 
 var movevh = function(){
-			nowClass.css('transform','translateY(' +  moveYDestance +"px");
-			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
-			nowClass.prev().css('transform','translateY('+ -pageHeight + 'px)');
+			nowClass.css('transform','translate3d(0,' +  moveYDestance +'px,0)');
+			nowClass.next().css('transform','translate3d(0,' +  (moveYDestance + pageHeight) +'px,0)');
+			nowClass.prev().css('transform','translate3d(0,'+ -pageHeight + 'px,0)');
 			moveYDestance += (pageHeight+1-moveYDestance)/8;
 			if(moveYDestance<pageHeight+1){
 				setTimeout(movevh, 1000/60);
