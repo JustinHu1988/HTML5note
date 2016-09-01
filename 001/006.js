@@ -30,6 +30,7 @@ pages.addEventListener("touchmove", function(e){
 });
 
 var movevh = function(){
+			alert("haha");
 			nowClass.css('transform','translateY(' +  moveYDestance +"px");
 			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
