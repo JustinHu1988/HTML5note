@@ -26,13 +26,13 @@ pages.addEventListener("touchmove", function(e){
 	//纵向跟手移动
 	e.preventDefault();
 	e.stopPropagation();
-	nowClass.css('-webkit-transform','translate3d(0,'+ (e.changedTouches[0].clientY-touchStartPostion.y) + 'px,0)');
+	nowClass.css('transform','translateY('+ (e.changedTouches[0].clientY-touchStartPostion.y) + 'px)');
 });
 
 var movevh = function(){
-			nowClass.css('top', moveYDestance +'px');
-			nowClass.next().css('-webkit-transform','translate3d(0,' +  (moveYDestance + pageHeight) +'px,0)');
-			nowClass.prev().css('-webkit-transform','translate3d(0,'+ -pageHeight + 'px,0)');
+			nowClass.css('transform','translate3d(0,' +  moveYDestance +'px,0)');
+			nowClass.next().css('transform','translate3d(0,' +  (moveYDestance + pageHeight) +'px,0)');
+			nowClass.prev().css('transform','translate3d(0,'+ -pageHeight + 'px,0)');
 			moveYDestance += (pageHeight+1-moveYDestance)/8;
 			if(moveYDestance<pageHeight+1){
 				setTimeout(movevh, 1000/60);
