@@ -15,24 +15,24 @@ pages.addEventListener("touchmove", function(e){
 	//纵向跟手移动
 	e.preventDefault();
 	nowClass.css('transform','translateY('+ (e.changedTouches[0].clientY-touchStartPostion.y) + 'px)');
-	console.log($("now").css('transform'));
 });
 
-var movevh = function(nowClass){
+var movevh = function(){
 			nowClass.css('transform','translateY(' +  moveYDestance +"px");
 			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
 			moveYDestance += (pageHeight+1-moveYDestance)/8;
 			if(moveYDestance<pageHeight+1){
-							window.setTimeout(movevh, 1000/60, nowClass, null);
+							window.setTimeout(movevh, 1000/60);
 						};
 					};
 
 pages.addEventListener("touchend",function(e){
 	console.log(e);
+	e.preventDefault();
 	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
 	if(moveYDestance>-50){
-		movevh(nowClass);
+		movevh();
 	}
 });
 
