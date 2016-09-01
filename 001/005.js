@@ -48,10 +48,8 @@
 						};
 					};
 					setTimeout(movevh, 1000/60);
-					setTimeout(function(){
 						_this.addClass("prev").removeClass("now");
 						_this.next().addClass("now").removeClass("next");
-					}, 400);
 
 					return false;
 					} else if($(this).index() == secLen-1){
@@ -74,10 +72,8 @@
 						};
 						};
 						setTimeout(movevh1, 1000/60);
-						setTimeout(function(){
 							_this.addClass("next").removeClass("now");
 							_this.prev().addClass("now").removeClass("prev");
-						}, 400);
 						
 						return false;
 					} else if($(this).index() == 0){
