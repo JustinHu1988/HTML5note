@@ -69,11 +69,11 @@
 						_this.next().css('transform','translateY('+ 100 + 'vh)');
 						k += Math.ceil((pageHeight+1-k)/8);
 						if(k<pageHeight+1){
-							setTimeout(movevh1, 1000);
+							setTimeout(movevh1, 1000/60);
 							console.log(k);
 						};
 						};
-						setTimeout(movevh1, 1000);
+						setTimeout(movevh1, 1000/60);
 						setTimeout(function(){
 							_this.addClass("next").removeClass("now");
 							_this.prev().addClass("now").removeClass("prev");
