@@ -2,8 +2,11 @@ var pages = document.getElementById("pages"),
 	touchStartPostion = {},
 	nowClass,
 	moveYDestance,
-	newInterval,
 	pageHeight = $(pages).height(); //直接使用原生.style.height获取不到height值
+
+document.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+});
 
 pages.addEventListener("touchstart", function(e){
 	e.preventDefault();
@@ -26,19 +29,19 @@ var movevh = function(){
 			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
 			moveYDestance += (pageHeight+1-moveYDestance)/8;
-					};
+			if(moveYDestance<pageHeight+1){
+				setTimeout(movevh, 1000/60);
+			};
+};
 
 pages.addEventListener("touchend",function(e){
 	console.log(e);
 	e.preventDefault();
 	e.stopPropagation();
 	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
-
-		newInterval = setInterval(movevh,1000/60);
-		if(moveYDestance>=pageHeight+1){
-							clearInterval(newInterval);
-						};
-
+	if(moveYDestance>-50){
+		movevh();
+	}
 });
 
 
