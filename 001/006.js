@@ -18,13 +18,13 @@ pages.addEventListener("touchmove", function(e){
 	console.log($("now").css('transform'));
 });
 
-var movevh = function(){
+var movevh = function(nowClass){
 			nowClass.css('transform','translateY(' +  moveYDestance +"px");
 			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
 			moveYDestance += (pageHeight+1-moveYDestance)/8;
 			if(moveYDestance<pageHeight+1){
-							window.setTimeout(movevh, 1000/60, pages, null);
+							window.setTimeout(movevh, 1000/60, nowClass, null);
 						};
 					};
 
@@ -32,7 +32,7 @@ pages.addEventListener("touchend",function(e){
 	console.log(e);
 	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
 	if(moveYDestance>-50){
-		movevh();
+		movevh(nowClass);
 	}
 });
 
