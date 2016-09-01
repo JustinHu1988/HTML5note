@@ -252,13 +252,13 @@
 		.now .arrow-bottom2 img{animation:upanddown 2s infinite;animation-fill-mode:forwards;
 		-webkit-animation:upanddown 2s infinite;-webkit-animation-fill-mode:forwards;}
 		.prev{
-			transform: translateY(-10rem);
+			transform: translateY(-10rem);-webkit-transform: translateY(-10rem);
 		}
 		.now{
-			top:0;
+			transform: translateY(0rem);-webkit-transform: translateY(0rem);
 		}
 		.next{
-			transform: translateY(-10rem);
+			transform: translateY(-10rem);-webkit-transform: translateY(10rem);
 		}
 		.logo{
 			height:1.2rem;
