@@ -26,9 +26,6 @@ var movevh = function(){
 			nowClass.next().css('transform','translateY(' +  (moveYDestance + pageHeight) +"px");
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
 			moveYDestance += (pageHeight+1-moveYDestance)/8;
-			if(moveYDestance>=pageHeight+1){
-							clearInterval(newInterval);
-						};
 					};
 
 pages.addEventListener("touchend",function(e){
@@ -38,6 +35,9 @@ pages.addEventListener("touchend",function(e){
 	moveYDestance = e.changedTouches[0].clientY - touchStartPostion.y;
 	if(moveYDestance>-50){
 		newInterval = setInterval(movevh,1000/60);
+		if(moveYDestance>=pageHeight+1){
+							clearInterval(newInterval);
+						};
 	}
 });
 
