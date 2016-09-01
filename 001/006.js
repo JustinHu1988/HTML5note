@@ -24,7 +24,7 @@ var movevh = function(){
 			nowClass.prev().css('transform','translateY('+ -100 + 'vh)');
 			moveYDestance += (pageHeight+1-moveYDestance)/8;
 			if(moveYDestance<pageHeight+1){
-							setTimeout(movevh, 1000/60);
+							window.setTimeout(movevh, 1000/60, pages, null);
 						};
 					};
 
